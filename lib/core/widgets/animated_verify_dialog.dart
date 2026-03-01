@@ -115,7 +115,7 @@ class AnimatedVerifyDialog extends StatelessWidget {
                             child: Text(
                               AppLocalizations.of(context)!.cancel,
                               style: TextStyle(
-                                color: Colors.grey[400],
+                                color: Theme.of(context).colorScheme.secondary,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
