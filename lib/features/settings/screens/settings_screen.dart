@@ -215,8 +215,7 @@ class SettingsScreen extends StatelessWidget {
     Color? valueColor,
   }) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-    final iconColor = isDark ? const Color(0xFF64FFDA) : theme.primaryColor;
+    final iconColor = theme.colorScheme.secondary;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -261,8 +260,7 @@ class SettingsScreen extends StatelessWidget {
     required ValueChanged<bool> onChanged,
   }) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-    final iconColor = isDark ? const Color(0xFF64FFDA) : theme.primaryColor;
+    final iconColor = theme.colorScheme.secondary;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -295,8 +293,7 @@ class SettingsScreen extends StatelessWidget {
 
   Widget _buildLanguageTile(BuildContext context, Locale currentLocale) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-    final iconColor = isDark ? const Color(0xFF64FFDA) : theme.primaryColor;
+    final iconColor = theme.colorScheme.secondary;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -513,8 +510,7 @@ class _PasswordViewState extends State<_PasswordView> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-    final iconColor = isDark ? const Color(0xFF64FFDA) : theme.primaryColor;
+    final iconColor = theme.colorScheme.secondary;
     final l10n = AppLocalizations.of(context)!;
 
     return Column(
