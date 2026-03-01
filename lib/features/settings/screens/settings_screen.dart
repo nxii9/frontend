@@ -638,17 +638,13 @@ class _PasswordViewState extends State<_PasswordView> {
             margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.red.withValues(alpha: 0.05),
+              color: iconColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.red.withValues(alpha: 0.1)),
+              border: Border.all(color: iconColor.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
-                Icon(
-                  Icons.lock_clock_rounded,
-                  size: 18,
-                  color: Colors.red[400],
-                ),
+                Icon(Icons.lock_clock_rounded, size: 18, color: iconColor),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
@@ -657,7 +653,7 @@ class _PasswordViewState extends State<_PasswordView> {
                       Text(
                         l10n.passwordLockedMsg,
                         style: TextStyle(
-                          color: Colors.red[400],
+                          color: iconColor,
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                         ),
@@ -666,7 +662,7 @@ class _PasswordViewState extends State<_PasswordView> {
                       Text(
                         l10n.daysRemaining(_daysRemaining),
                         style: TextStyle(
-                          color: Colors.red[400]?.withValues(alpha: 0.8),
+                          color: iconColor.withValues(alpha: 0.8),
                           fontSize: 11,
                         ),
                       ),
