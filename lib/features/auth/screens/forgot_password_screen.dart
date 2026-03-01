@@ -78,8 +78,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   size: 80,
                   color: Theme.of(context).colorScheme.primary,
                 ).animate().scale(
-                  delay: 200.ms,
-                  duration: 400.ms,
+                  delay: 150.ms,
+                  duration: 300.ms,
                   curve: Curves.easeOutBack,
                 ),
                 const SizedBox(height: 24),
@@ -91,7 +91,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     color: isDark ? Colors.grey[400] : Colors.grey[700],
                     height: 1.5,
                   ),
-                ).animate().fadeIn(delay: 300.ms),
+                ).animate().fadeIn(delay: 200.ms),
                 const SizedBox(height: 40),
                 ModernTextField(
                   label: l10n.emailOrIdLabel,
@@ -103,7 +103,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     }
                     return null;
                   },
-                ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2, end: 0),
+                ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0),
                 const SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: _verifyIdentity,
@@ -125,7 +125,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       letterSpacing: 1,
                     ),
                   ),
-                ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2, end: 0),
+                ).animate().fadeIn(delay: 350.ms).slideY(begin: 0.2, end: 0),
               ],
             ),
           ),

@@ -63,12 +63,12 @@ class AnimatedSuccessDialog extends StatelessWidget {
                           )
                           .animate()
                           .scale(
-                            duration: 600.ms,
+                            duration: 400.ms,
                             curve: Curves.elasticOut,
                             begin: const Offset(0, 0),
                           )
                           .then()
-                          .shimmer(duration: 1200.ms, delay: 200.ms),
+                          .shimmer(duration: 850.ms, delay: 150.ms),
                       const SizedBox(height: 24),
                       Text(
                             title,
@@ -81,7 +81,7 @@ class AnimatedSuccessDialog extends StatelessWidget {
                             ),
                           )
                           .animate()
-                          .fadeIn(delay: 200.ms)
+                          .fadeIn(delay: 150.ms)
                           .moveY(begin: 10, end: 0, curve: Curves.easeOut),
                       const SizedBox(height: 32),
                       SizedBox(
@@ -105,18 +105,18 @@ class AnimatedSuccessDialog extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ).animate().fadeIn(delay: 400.ms),
+                      ).animate().fadeIn(delay: 300.ms),
                     ],
                   ),
                 ),
               )
               .animate()
               .scale(
-                duration: 400.ms,
+                duration: 300.ms,
                 curve: Curves.easeOutBack,
                 begin: const Offset(0.8, 0.8),
               )
-              .fadeIn(duration: 300.ms),
+              .fadeIn(duration: 200.ms),
     );
   }
 }

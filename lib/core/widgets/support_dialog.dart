@@ -53,7 +53,7 @@ class SupportDialog extends StatelessWidget {
                           size: 36,
                         ),
                       ).animate().scale(
-                        duration: 500.ms,
+                        duration: 350.ms,
                         curve: Curves.easeOutBack,
                       ),
                       const SizedBox(height: 20),
@@ -69,7 +69,7 @@ class SupportDialog extends StatelessWidget {
                             ),
                           )
                           .animate()
-                          .fadeIn(delay: 200.ms)
+                          .fadeIn(delay: 150.ms)
                           .moveY(begin: 10, end: 0),
                       const SizedBox(height: 12),
                       Text(
@@ -82,7 +82,7 @@ class SupportDialog extends StatelessWidget {
                           fontSize: 14,
                           height: 1.5,
                         ),
-                      ).animate().fadeIn(delay: 300.ms),
+                      ).animate().fadeIn(delay: 200.ms),
                       const SizedBox(height: 28),
 
                       // Contact Options
@@ -92,7 +92,7 @@ class SupportDialog extends StatelessWidget {
                         title: AppLocalizations.of(context)!.phoneNumberLabel,
                         subtitle: '+967 77X XXX XXX',
                         color: Colors.blue,
-                        delay: 400.ms,
+                        delay: 300.ms,
                       ),
                       const SizedBox(height: 12),
                       _buildContactOption(
@@ -101,7 +101,7 @@ class SupportDialog extends StatelessWidget {
                         title: AppLocalizations.of(context)!.whatsappLabel,
                         subtitle: '+967 77X XXX XXX',
                         color: Colors.green,
-                        delay: 500.ms,
+                        delay: 350.ms,
                       ),
                       const SizedBox(height: 12),
                       _buildContactOption(
@@ -110,7 +110,7 @@ class SupportDialog extends StatelessWidget {
                         title: AppLocalizations.of(context)!.emailLabel,
                         subtitle: 'support@university.edu',
                         color: Colors.redAccent,
-                        delay: 600.ms,
+                        delay: 400.ms,
                       ),
 
                       const SizedBox(height: 32),
@@ -137,18 +137,18 @@ class SupportDialog extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ).animate().fadeIn(delay: 700.ms),
+                      ).animate().fadeIn(delay: 500.ms),
                     ],
                   ),
                 ),
               )
               .animate()
               .scale(
-                duration: 400.ms,
+                duration: 300.ms,
                 curve: Curves.easeOutBack,
                 begin: const Offset(0.8, 0.8),
               )
-              .fadeIn(duration: 300.ms),
+              .fadeIn(duration: 200.ms),
     );
   }
 

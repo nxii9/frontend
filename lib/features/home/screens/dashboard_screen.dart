@@ -60,12 +60,12 @@ class DashboardScreen extends StatelessWidget {
                       const SizedBox(height: 12),
                       _buildScheduleCard(context),
                     ]
-                    .animate(interval: 100.ms)
-                    .fadeIn(duration: 600.ms, curve: Curves.easeOut)
+                    .animate(interval: 80.ms)
+                    .fadeIn(duration: 400.ms, curve: Curves.easeOut)
                     .slideY(
                       begin: 0.1,
                       end: 0,
-                      duration: 600.ms,
+                      duration: 400.ms,
                       curve: Curves.easeOutQuart,
                     ),
           ),

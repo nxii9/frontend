@@ -64,12 +64,12 @@ class RegistrationSuccessDialog extends StatelessWidget {
                           )
                           .animate()
                           .scale(
-                            duration: 600.ms,
+                            duration: 400.ms,
                             curve: Curves.elasticOut,
                             begin: const Offset(0, 0),
                           )
                           .then()
-                          .shimmer(duration: 1200.ms, delay: 200.ms),
+                          .shimmer(duration: 850.ms, delay: 150.ms),
                       const SizedBox(height: 24),
                       Text(
                             title,
@@ -82,7 +82,7 @@ class RegistrationSuccessDialog extends StatelessWidget {
                             ),
                           )
                           .animate()
-                          .fadeIn(delay: 200.ms)
+                          .fadeIn(delay: 150.ms)
                           .moveY(begin: 10, end: 0, curve: Curves.easeOut),
                       const SizedBox(height: 8),
                       Text(
@@ -94,7 +94,7 @@ class RegistrationSuccessDialog extends StatelessWidget {
                           ).colorScheme.onSurface.withValues(alpha: 0.7),
                           fontSize: 14,
                         ),
-                      ).animate().fadeIn(delay: 300.ms),
+                      ).animate().fadeIn(delay: 200.ms),
                       const SizedBox(height: 24),
                       Container(
                         width: double.infinity,
@@ -134,7 +134,7 @@ class RegistrationSuccessDialog extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ).animate().fadeIn(delay: 400.ms).scale(),
+                      ).animate().fadeIn(delay: 300.ms).scale(),
                       const SizedBox(height: 32),
                       SizedBox(
                         width: double.infinity,
@@ -157,18 +157,18 @@ class RegistrationSuccessDialog extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ).animate().fadeIn(delay: 500.ms),
+                      ).animate().fadeIn(delay: 350.ms),
                     ],
                   ),
                 ),
               )
               .animate()
               .scale(
-                duration: 400.ms,
+                duration: 300.ms,
                 curve: Curves.easeOutBack,
                 begin: const Offset(0.8, 0.8),
               )
-              .fadeIn(duration: 300.ms),
+              .fadeIn(duration: 200.ms),
     );
   }
 }

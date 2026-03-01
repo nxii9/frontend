@@ -65,7 +65,7 @@ class AnimatedVerifyDialog extends StatelessWidget {
                               .animate(
                                 onPlay: (controller) => controller.repeat(),
                               )
-                              .shimmer(duration: 2000.ms, delay: 1000.ms),
+                              .shimmer(duration: 1400.ms, delay: 700.ms),
                           const SizedBox(width: 16),
                           Flexible(
                             child: Text(
@@ -85,7 +85,7 @@ class AnimatedVerifyDialog extends StatelessWidget {
                       ModernTextField(
                         label: AppLocalizations.of(context)!.referenceIdLabel,
                         prefixIcon: Icons.numbers,
-                      ).animate().fadeIn(delay: 200.ms).slideX(begin: 0.1),
+                      ).animate().fadeIn(delay: 150.ms).slideX(begin: 0.1),
                       const SizedBox(height: 32),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -105,8 +105,8 @@ class AnimatedVerifyDialog extends StatelessWidget {
                             ),
                             child: Text(AppLocalizations.of(context)!.verify),
                           ).animate().scale(
-                            delay: 500.ms,
-                            duration: 300.ms,
+                            delay: 350.ms,
+                            duration: 200.ms,
                             curve: Curves.easeInOut,
                           ),
                           const SizedBox(width: 16),
@@ -121,18 +121,18 @@ class AnimatedVerifyDialog extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ).animate().fadeIn(delay: 400.ms),
+                      ).animate().fadeIn(delay: 300.ms),
                     ],
                   ),
                 ),
               )
               .animate()
               .scale(
-                duration: 400.ms,
+                duration: 300.ms,
                 curve: Curves.easeOutBack,
                 begin: const Offset(0.8, 0.8),
               )
-              .fadeIn(duration: 300.ms),
+              .fadeIn(duration: 200.ms),
     );
   }
 }

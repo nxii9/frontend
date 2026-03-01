@@ -49,12 +49,12 @@ class StepContainer extends StatelessWidget {
               ],
             )
             .animate()
-            .fadeIn(duration: 400.ms)
+            .fadeIn(duration: 300.ms)
             .slideX(begin: -0.2, end: 0, curve: Curves.easeOut),
         const SizedBox(height: 24),
         // Details/Content
         child.animate().fadeIn(
-          duration: 500.ms,
+          duration: 350.ms,
           curve: Curves.easeInOut,
         ), // Simpler animation
       ],

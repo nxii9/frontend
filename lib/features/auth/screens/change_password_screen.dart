@@ -152,8 +152,8 @@ class ChangePasswordScreen extends StatelessWidget {
                         ),
                       ],
                     ]
-                    .animate(interval: 100.ms)
-                    .fadeIn(duration: 500.ms)
+                    .animate(interval: 80.ms)
+                    .fadeIn(duration: 350.ms)
                     .slideY(begin: 0.2, end: 0),
           ),
         ),

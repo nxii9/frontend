@@ -42,9 +42,9 @@ class ReferenceScreen extends StatelessWidget {
                     ),
                   )
                   .animate()
-                  .scale(duration: 600.ms, curve: Curves.elasticOut)
+                  .scale(duration: 400.ms, curve: Curves.elasticOut)
                   .then()
-                  .shimmer(duration: 1200.ms),
+                  .shimmer(duration: 850.ms),
               const SizedBox(height: 32),
 
               Text(
@@ -54,7 +54,7 @@ class ReferenceScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: primaryColor,
                 ),
-              ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0),
+              ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
 
               const SizedBox(height: 16),
               Text(
@@ -64,7 +64,7 @@ class ReferenceScreen extends StatelessWidget {
                   fontSize: 16,
                   color: isDark ? Colors.grey[300] : Colors.grey[700],
                 ),
-              ).animate().fadeIn(delay: 500.ms),
+              ).animate().fadeIn(delay: 350.ms),
 
               const SizedBox(height: 48),
 
@@ -125,7 +125,7 @@ class ReferenceScreen extends StatelessWidget {
                     ),
                   )
                   .animate()
-                  .fadeIn(delay: 700.ms)
+                  .fadeIn(delay: 500.ms)
                   .scale(curve: Curves.easeOutBack),
 
               const Spacer(),
@@ -156,7 +156,7 @@ class ReferenceScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              ).animate().fadeIn(delay: 900.ms).slideY(begin: 0.5, end: 0),
+              ).animate().fadeIn(delay: 650.ms).slideY(begin: 0.5, end: 0),
 
               const SizedBox(height: 32),
 
@@ -176,7 +176,7 @@ class ReferenceScreen extends StatelessWidget {
                     color: Theme.of(context).colorScheme.secondary,
                   ),
                 ],
-              ).animate().fadeIn(delay: 1100.ms),
+              ).animate().fadeIn(delay: 750.ms),
               const SizedBox(height: 16),
             ],
           ),

@@ -155,7 +155,7 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     ]
                     .animate(interval: 50.ms)
-                    .fadeIn(duration: 600.ms, curve: Curves.easeOut)
+                    .fadeIn(duration: 400.ms, curve: Curves.easeOut)
                     .slideY(begin: 0.2, end: 0) +
                 [
                   const SizedBox(height: 12),
@@ -445,9 +445,9 @@ class _AnimatedLogoutButton extends StatelessWidget {
           ),
         )
         .animate()
-        .fadeIn(duration: 600.ms, curve: Curves.easeOutCubic)
+        .fadeIn(duration: 400.ms, curve: Curves.easeOutCubic)
         .slideY(begin: 0.2, end: 0)
-        .shimmer(duration: 1500.ms, color: Colors.white.withValues(alpha: 0.2));
+        .shimmer(duration: 1050.ms, color: Colors.white.withValues(alpha: 0.2));
   }
 }
 
