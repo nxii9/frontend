@@ -188,6 +188,7 @@ class ModernDropdownField<T> extends StatelessWidget {
               },
               borderRadius: BorderRadius.circular(16),
               child: InputDecorator(
+                isEmpty: value == null,
                 decoration: InputDecoration(
                   labelText: label,
                   labelStyle: TextStyle(
@@ -207,8 +208,8 @@ class ModernDropdownField<T> extends StatelessWidget {
                   ),
                   filled: true,
                   fillColor: isDark
-                      ? Colors.grey.shade900.withValues(alpha: 0.6)
-                      : Colors.white.withValues(alpha: 0.8),
+                      ? Colors.grey.shade900.withOpacity(0.6)
+                      : Colors.white.withOpacity(0.8),
                   contentPadding: const EdgeInsets.symmetric(
                     vertical: 20,
                     horizontal: 16,
@@ -256,14 +257,7 @@ class ModernDropdownField<T> extends StatelessWidget {
                               ),
                               child: displayChild,
                             )
-                          : Text(
-                              '',
-                              style: TextStyle(
-                                color: isDark
-                                    ? Colors.grey[400]
-                                    : Colors.grey[600],
-                              ),
-                            ),
+                          : const SizedBox.shrink(),
                     ),
                     Icon(
                       Icons.keyboard_arrow_down_rounded,
