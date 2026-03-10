@@ -113,11 +113,16 @@ class AcademicDesiresStep extends StatelessWidget {
             label: l10n.college,
             prefixIcon: Icons.apartment_rounded,
             value: desire.college,
-            items: [
-              'College of IT',
-              'College of Engineering',
-              'College of Business',
-            ].map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
+            items:
+                <String>[
+                      l10n.collegeIT,
+                      l10n.collegeEngineering,
+                      l10n.collegeBusiness,
+                    ]
+                    .map(
+                      (e) => DropdownMenuItem<String>(value: e, child: Text(e)),
+                    )
+                    .toList(),
             onChanged: (value) {
               final newDesires = List<AcademicDesire>.from(
                 cubit.state.data.academicDesires,
@@ -138,13 +143,18 @@ class AcademicDesiresStep extends StatelessWidget {
             label: l10n.majorValue,
             prefixIcon: Icons.school_rounded,
             value: desire.major,
-            items: [
-              'Computer Science',
-              'IT',
-              'Software Engineering',
-              'Civil Engineering',
-              'Accounting',
-            ].map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
+            items:
+                <String>[
+                      l10n.majorCS,
+                      l10n.majorIT,
+                      l10n.majorSE,
+                      l10n.majorCE,
+                      l10n.majorAccounting,
+                    ]
+                    .map(
+                      (e) => DropdownMenuItem<String>(value: e, child: Text(e)),
+                    )
+                    .toList(),
             onChanged: (value) {
               final newDesires = List<AcademicDesire>.from(
                 cubit.state.data.academicDesires,

@@ -350,6 +350,54 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get navSettings;
 
+  /// No description provided for @collegeIT.
+  ///
+  /// In en, this message translates to:
+  /// **'College of IT'**
+  String get collegeIT;
+
+  /// No description provided for @collegeEngineering.
+  ///
+  /// In en, this message translates to:
+  /// **'College of Engineering'**
+  String get collegeEngineering;
+
+  /// No description provided for @collegeBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'College of Business'**
+  String get collegeBusiness;
+
+  /// No description provided for @majorCS.
+  ///
+  /// In en, this message translates to:
+  /// **'Computer Science'**
+  String get majorCS;
+
+  /// No description provided for @majorIT.
+  ///
+  /// In en, this message translates to:
+  /// **'IT'**
+  String get majorIT;
+
+  /// No description provided for @majorSE.
+  ///
+  /// In en, this message translates to:
+  /// **'Software Engineering'**
+  String get majorSE;
+
+  /// No description provided for @majorCE.
+  ///
+  /// In en, this message translates to:
+  /// **'Civil Engineering'**
+  String get majorCE;
+
+  /// No description provided for @majorAccounting.
+  ///
+  /// In en, this message translates to:
+  /// **'Accounting'**
+  String get majorAccounting;
+
   /// No description provided for @settingsTitle.
   ///
   /// In en, this message translates to:

@@ -139,6 +139,30 @@ class AppLocalizationsAr extends AppLocalizations {
   String get navSettings => 'الإعدادات';
 
   @override
+  String get collegeIT => 'كلية تقنية المعلومات';
+
+  @override
+  String get collegeEngineering => 'كلية الهندسة';
+
+  @override
+  String get collegeBusiness => 'كلية إدارة الأعمال';
+
+  @override
+  String get majorCS => 'علوم الحاسب';
+
+  @override
+  String get majorIT => 'تقنية المعلومات';
+
+  @override
+  String get majorSE => 'هندسة البرمجيات';
+
+  @override
+  String get majorCE => 'الهندسة المدنية';
+
+  @override
+  String get majorAccounting => 'المحاسبة';
+
+  @override
   String get settingsTitle => 'الإعدادات';
 
   @override

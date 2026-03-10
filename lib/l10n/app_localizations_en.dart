@@ -139,6 +139,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navSettings => 'Settings';
 
   @override
+  String get collegeIT => 'College of IT';
+
+  @override
+  String get collegeEngineering => 'College of Engineering';
+
+  @override
+  String get collegeBusiness => 'College of Business';
+
+  @override
+  String get majorCS => 'Computer Science';
+
+  @override
+  String get majorIT => 'IT';
+
+  @override
+  String get majorSE => 'Software Engineering';
+
+  @override
+  String get majorCE => 'Civil Engineering';
+
+  @override
+  String get majorAccounting => 'Accounting';
+
+  @override
   String get settingsTitle => 'Settings';
 
   @override
