@@ -124,7 +124,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get levelLabel => 'Level';
 
   @override
-  String get majorValue => 'Computer Science';
+  String get majorValue => 'Major';
 
   @override
   String get navHome => 'Home';

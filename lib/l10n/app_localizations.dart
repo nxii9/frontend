@@ -323,7 +323,7 @@ abstract class AppLocalizations {
   /// No description provided for @majorValue.
   ///
   /// In en, this message translates to:
-  /// **'Computer Science'**
+  /// **'Major'**
   String get majorValue;
 
   /// No description provided for @navHome.

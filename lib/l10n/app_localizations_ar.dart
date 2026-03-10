@@ -124,7 +124,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get levelLabel => 'المستوى';
 
   @override
-  String get majorValue => 'علوم حاسب';
+  String get majorValue => 'التخصص';
 
   @override
   String get navHome => 'الرئيسية';
