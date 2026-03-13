@@ -154,9 +154,9 @@ class SettingsScreen extends StatelessWidget {
                         ],
                       ),
                     ]
-                    .animate(interval: 50.ms)
-                    .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                    .slideY(begin: 0.2, end: 0) +
+                    .animate(interval: 20.ms)
+                    .fadeIn(duration: 200.ms, curve: Curves.easeOut)
+                    .slideY(begin: 0.2, end: 0, duration: 200.ms) +
                 [
                   const SizedBox(height: 12),
                   // Logout Button

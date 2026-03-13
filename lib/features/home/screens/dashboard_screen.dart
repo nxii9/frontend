@@ -60,12 +60,12 @@ class DashboardScreen extends StatelessWidget {
                       const SizedBox(height: 12),
                       _buildScheduleCard(context),
                     ]
-                    .animate(interval: 80.ms)
-                    .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+                    .animate(interval: 30.ms)
+                    .fadeIn(duration: 200.ms, curve: Curves.easeOut)
                     .slideY(
                       begin: 0.1,
                       end: 0,
-                      duration: 400.ms,
+                      duration: 200.ms,
                       curve: Curves.easeOutQuart,
                     ),
           ),
@@ -542,9 +542,9 @@ class DashboardScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16),
                           ),
                         )
-                        .animate(delay: (index * 100).ms)
-                        .fadeIn()
-                        .slideX(begin: 0.1, end: 0);
+                        .animate(delay: (index * 40).ms)
+                        .fadeIn(duration: 150.ms)
+                        .slideX(begin: 0.1, end: 0, duration: 150.ms);
                   },
                 ),
               ),
