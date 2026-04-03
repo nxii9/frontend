@@ -157,6 +157,26 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 16),
+                      // Upload Photos Button
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          // Visual only
+                        },
+                        icon: const Icon(Icons.add_photo_alternate_rounded),
+                        label: Text(
+                          AppLocalizations.of(context)!.uploadPhotos,
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          side: BorderSide(
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      ),
                       const SizedBox(height: 32),
 
                       ElevatedButton(

@@ -253,6 +253,25 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   ),
                 ),
                 const SizedBox(height: 16),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      // TODO: Implement photos upload
+                    },
+                    icon: const Icon(Icons.add_photo_alternate_rounded),
+                    label: Text(l10n.uploadPhotos),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      backgroundColor: const Color(0xFF009688),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
                 Divider(
                   thickness: 1.5,
                   color: Theme.of(context).brightness == Brightness.dark

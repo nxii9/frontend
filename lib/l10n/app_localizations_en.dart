@@ -73,7 +73,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectMajor => 'Select Major';
 
   @override
-  String get uploadDocuments => 'Attach High School Certificate/Images';
+  String get uploadDocuments => 'Attach High School Certificate';
+
+  @override
+  String get uploadPhotos => 'Attach Photos';
 
   @override
   String get submitRegistration => 'Submit Registration';

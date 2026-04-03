@@ -73,7 +73,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get selectMajor => 'اختر التخصص';
 
   @override
-  String get uploadDocuments => 'إرفاق شهادة الثانوي/الصور';
+  String get uploadDocuments => 'إرفاق شهادة الثانوي';
+
+  @override
+  String get uploadPhotos => 'إلحاق الصور';
 
   @override
   String get submitRegistration => 'إرسال التسجيل';

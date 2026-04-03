@@ -227,8 +227,14 @@ abstract class AppLocalizations {
   /// No description provided for @uploadDocuments.
   ///
   /// In en, this message translates to:
-  /// **'Attach High School Certificate/Images'**
+  /// **'Attach High School Certificate'**
   String get uploadDocuments;
+
+  /// No description provided for @uploadPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach Photos'**
+  String get uploadPhotos;
 
   /// No description provided for @submitRegistration.
   ///
