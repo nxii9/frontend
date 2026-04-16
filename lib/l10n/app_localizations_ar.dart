@@ -15,7 +15,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loginTitle => 'تسجيل الدخول';
 
   @override
-  String get welcomeBack => '!أهلاً بك مجدداً';
+  String get welcomeBack => 'أهلاً بك مجدداً!';
 
   @override
   String get username => 'اسم المستخدم';
@@ -55,7 +55,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get updatePasswordButton => 'تحديث كلمة المرور';
 
   @override
-  String get passwordChangedSuccess => '!تم تغيير كلمة المرور بنجاح';
+  String get passwordChangedSuccess => 'تم تغيير كلمة المرور بنجاح!';
 
   @override
   String get fullName => 'الاسم الكامل';
@@ -85,7 +85,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get submitRegistration => 'إرسال التسجيل';
 
   @override
-  String get registrationSuccessful => '!تم التسجيل بنجاح';
+  String get registrationSuccessful => 'تم التسجيل بنجاح!';
 
   @override
   String get applicationReceived =>
