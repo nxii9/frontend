@@ -31,6 +31,44 @@ class _DeclarationStepState extends State<DeclarationStep> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    // Simulate uploading receipt
+                    if (state.data.receiptPath == null) {
+                      cubit.updateData(
+                        state.data.copyWith(
+                          receiptPath: 'uploaded_receipt.pdf',
+                        ),
+                      );
+                    } else {
+                      // Remove receipt if clicked again
+                      cubit.updateData(
+                        state.data.copyWith(receiptPath: null),
+                      );
+                    }
+                  },
+                  icon: Icon(
+                    state.data.receiptPath != null
+                        ? Icons.check_circle_rounded
+                        : Icons.receipt_long_rounded,
+                  ),
+                  label: Text(l10n.uploadReceipt),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor:
+                        state.data.receiptPath != null
+                            ? Colors.green
+                            : const Color(0xFF009688),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
               CheckboxListTile(
                 contentPadding: EdgeInsets.zero,
                 title: Text(

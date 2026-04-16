@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../../core/bloc/language_cubit.dart';
 import '../../../core/bloc/theme_cubit.dart';
 import '../../../core/widgets/gradient_background.dart';
+import '../../../core/widgets/support_dialog.dart';
 import 'package:university_app/l10n/app_localizations.dart';
 import '../../auth/screens/login_screen.dart';
 
@@ -151,6 +152,40 @@ class SettingsScreen extends StatelessWidget {
                               return _buildLanguageTile(context, locale);
                             },
                           ),
+                          _buildDivider(context),
+                          // Contact University Button
+                          GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => const SupportDialog(),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.1),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(Icons.support_agent_rounded, color: Theme.of(context).colorScheme.secondary, size: 22),
+                                  ),
+                                  const SizedBox(width: 16),
+                                  Expanded(
+                                    child: Text(
+                                      AppLocalizations.of(context)!.contactUniversity,
+                                      style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+                                    ),
+                                  ),
+                                  Icon(Icons.arrow_forward_ios_rounded, size: 16, color: Colors.grey.shade500),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ]
@@ -187,6 +222,7 @@ class SettingsScreen extends StatelessWidget {
   }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF2A2A2A) : Colors.white,
         borderRadius: BorderRadius.circular(24),

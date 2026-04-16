@@ -41,6 +41,7 @@ class RegistrationData extends Equatable {
   final String governorate;
   final String district;
   final String? profilePicturePath;
+  final String? certificatePath;
 
   // 2. Employment Status
   final bool isEmployed;
@@ -83,6 +84,7 @@ class RegistrationData extends Equatable {
   // 8. Declaration & Confirmation
   final bool declarationChecked;
   final String? signaturePath;
+  final String? receiptPath;
 
   const RegistrationData({
     this.fullNameAr = '',
@@ -95,6 +97,7 @@ class RegistrationData extends Equatable {
     this.governorate = '',
     this.district = '',
     this.profilePicturePath,
+    this.certificatePath,
     this.isEmployed = false,
     this.sector,
     this.jobTitle,
@@ -127,6 +130,7 @@ class RegistrationData extends Equatable {
     this.reasonForChoosing,
     this.declarationChecked = false,
     this.signaturePath,
+    this.receiptPath,
   });
 
   RegistrationData copyWith({
@@ -140,6 +144,7 @@ class RegistrationData extends Equatable {
     String? governorate,
     String? district,
     String? profilePicturePath,
+    String? certificatePath,
     bool? isEmployed,
     Sector? sector,
     String? jobTitle,
@@ -168,6 +173,7 @@ class RegistrationData extends Equatable {
     String? reasonForChoosing,
     bool? declarationChecked,
     String? signaturePath,
+    String? receiptPath,
   }) {
     return RegistrationData(
       fullNameAr: fullNameAr ?? this.fullNameAr,
@@ -180,6 +186,7 @@ class RegistrationData extends Equatable {
       governorate: governorate ?? this.governorate,
       district: district ?? this.district,
       profilePicturePath: profilePicturePath ?? this.profilePicturePath,
+      certificatePath: certificatePath ?? this.certificatePath,
       isEmployed: isEmployed ?? this.isEmployed,
       sector: sector ?? this.sector,
       jobTitle: jobTitle ?? this.jobTitle,
@@ -208,6 +215,7 @@ class RegistrationData extends Equatable {
       reasonForChoosing: reasonForChoosing ?? this.reasonForChoosing,
       declarationChecked: declarationChecked ?? this.declarationChecked,
       signaturePath: signaturePath ?? this.signaturePath,
+      receiptPath: receiptPath ?? this.receiptPath,
     );
   }
 
@@ -223,6 +231,7 @@ class RegistrationData extends Equatable {
     governorate,
     district,
     profilePicturePath,
+    certificatePath,
     isEmployed,
     sector,
     jobTitle,
@@ -251,5 +260,6 @@ class RegistrationData extends Equatable {
     reasonForChoosing,
     declarationChecked,
     signaturePath,
+    receiptPath,
   ];
 }

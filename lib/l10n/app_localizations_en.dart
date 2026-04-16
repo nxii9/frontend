@@ -42,7 +42,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changePasswordTitle => 'Change Password';
 
   @override
-  String get changePasswordDescription => 'Please enter your new password below.';
+  String get changePasswordDescription =>
+      'Please enter your new password below.';
 
   @override
   String get newPassword => 'New Password';
@@ -75,6 +76,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get uploadDocuments => 'Attach High School Certificate';
 
   @override
+  String get uploadReceipt => 'Upload Receipt';
+
+  @override
   String get uploadPhotos => 'Attach Photos';
 
   @override
@@ -84,7 +88,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registrationSuccessful => 'Registration Successful!';
 
   @override
-  String get applicationReceived => 'Your application has been received. Please save your Reference ID for future inquiries.';
+  String get applicationReceived =>
+      'Your application has been received. Please save your Reference ID for future inquiries.';
 
   @override
   String get referenceIdLabel => 'Reference ID';
@@ -380,7 +385,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reasonForChoosing => 'Reason for choosing us';
 
   @override
-  String get declarationText => 'I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief.';
+  String get declarationText =>
+      'I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief.';
 
   @override
   String get signature => 'Signature';
@@ -472,7 +478,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get warning => 'Warning';
 
   @override
-  String get registrationFeeWarning => 'The information you entered will not be accepted until the registration fees are paid.';
+  String get registrationFeeWarning =>
+      'The information you entered will not be accepted until the registration fees are paid.';
 
   @override
   String get ok => 'OK';
@@ -481,7 +488,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forgotPasswordTitle => 'Forgot Password';
 
   @override
-  String get forgotPasswordDesc => 'Please enter your email or university ID to verify your identity.';
+  String get forgotPasswordDesc =>
+      'Please enter your email or university ID to verify your identity.';
 
   @override
   String get emailOrIdLabel => 'Email / University ID';
@@ -493,7 +501,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get identityVerifiedSuccess => 'Identity verified successfully!';
 
   @override
-  String get mandatoryPasswordNotice => 'Note: The new password will be your permanent password that you will use to log in next time. The password you used to log in now is only a temporary password.';
+  String get mandatoryPasswordNotice =>
+      'Note: The new password will be your permanent password that you will use to log in next time. The password you used to log in now is only a temporary password.';
 
   @override
   String get notificationsTitle => 'Notifications';
@@ -505,13 +514,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noNotificationsMsg => 'No new notifications at the moment';
 
   @override
-  String get registrationSuccessDesc => 'Your application has been received. Please keep the reference number for future inquiries.';
+  String get registrationSuccessDesc =>
+      'Your application has been received. Please keep the reference number for future inquiries.';
 
   @override
   String get referenceNumberLabel => 'Reference Number';
 
   @override
-  String get supportMessage => 'We are here to help! You can contact us through any of the following channels:';
+  String get supportMessage =>
+      'We are here to help! You can contact us through any of the following channels:';
 
   @override
   String get phoneNumberLabel => 'Phone Number';
@@ -532,11 +543,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dummyNotification2Title => 'System Update';
 
   @override
-  String get dummyNotification2Subtitle => 'New features added to schedule view.';
+  String get dummyNotification2Subtitle =>
+      'New features added to schedule view.';
 
   @override
   String get dummyNotification3Title => 'Registration Deadline';
 
   @override
-  String get dummyNotification3Subtitle => 'Please complete your documents by tomorrow.';
+  String get dummyNotification3Subtitle =>
+      'Please complete your documents by tomorrow.';
+
+  @override
+  String get contactUniversity => 'Contact University';
 }

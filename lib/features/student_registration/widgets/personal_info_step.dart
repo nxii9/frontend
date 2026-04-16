@@ -233,18 +233,35 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   },
                 ),
                 const SizedBox(height: 16),
-                // Profile Picture placeholder
+                // Documents Upload
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      // TODO: Implement document upload
+                      if (state.data.certificatePath == null) {
+                        cubit.updateData(
+                          state.data.copyWith(
+                            certificatePath: 'uploaded_doc.pdf',
+                          ),
+                        );
+                      } else {
+                        cubit.updateData(
+                          state.data.copyWith(certificatePath: null),
+                        );
+                      }
                     },
-                    icon: const Icon(Icons.upload_file),
+                    icon: Icon(
+                      state.data.certificatePath != null
+                          ? Icons.check_circle_rounded
+                          : Icons.upload_file,
+                    ),
                     label: Text(l10n.uploadDocuments),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      backgroundColor: const Color(0xFF009688),
+                      backgroundColor:
+                          state.data.certificatePath != null
+                              ? Colors.green
+                              : const Color(0xFF009688),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -253,17 +270,35 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   ),
                 ),
                 const SizedBox(height: 16),
+                // Photos Upload
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      // TODO: Implement photos upload
+                      if (state.data.profilePicturePath == null) {
+                        cubit.updateData(
+                          state.data.copyWith(
+                            profilePicturePath: 'uploaded_photo.jpg',
+                          ),
+                        );
+                      } else {
+                        cubit.updateData(
+                          state.data.copyWith(profilePicturePath: null),
+                        );
+                      }
                     },
-                    icon: const Icon(Icons.add_photo_alternate_rounded),
+                    icon: Icon(
+                      state.data.profilePicturePath != null
+                          ? Icons.check_circle_rounded
+                          : Icons.add_photo_alternate_rounded,
+                    ),
                     label: Text(l10n.uploadPhotos),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      backgroundColor: const Color(0xFF009688),
+                      backgroundColor:
+                          state.data.profilePicturePath != null
+                              ? Colors.green
+                              : const Color(0xFF009688),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),

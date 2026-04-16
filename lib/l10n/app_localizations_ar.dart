@@ -42,7 +42,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get changePasswordTitle => 'تغيير كلمة المرور';
 
   @override
-  String get changePasswordDescription => 'الرجاء إدخال كلمة المرور الجديدة أدناه.';
+  String get changePasswordDescription =>
+      'الرجاء إدخال كلمة المرور الجديدة أدناه.';
 
   @override
   String get newPassword => 'كلمة المرور الجديدة';
@@ -75,6 +76,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get uploadDocuments => 'إرفاق شهادة الثانوي';
 
   @override
+  String get uploadReceipt => 'رفع السند';
+
+  @override
   String get uploadPhotos => 'إرفاق الصور';
 
   @override
@@ -84,7 +88,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get registrationSuccessful => '!تم التسجيل بنجاح';
 
   @override
-  String get applicationReceived => 'تم استلام طلبك. يرجى حفظ الرقم المرجعي للاستفسارات المستقبلية.';
+  String get applicationReceived =>
+      'تم استلام طلبك. يرجى حفظ الرقم المرجعي للاستفسارات المستقبلية.';
 
   @override
   String get referenceIdLabel => 'الرقم المرجعي';
@@ -380,7 +385,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reasonForChoosing => 'سبب اختيارك لنا';
 
   @override
-  String get declarationText => 'أقر بأن جميع البيانات المدخلة أعلاه صحيحة وعلى مسؤوليتي الشخصية.';
+  String get declarationText =>
+      'أقر بأن جميع البيانات المدخلة أعلاه صحيحة وعلى مسؤوليتي الشخصية.';
 
   @override
   String get signature => 'التوقيع';
@@ -472,7 +478,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get warning => 'تنبيه';
 
   @override
-  String get registrationFeeWarning => 'لن يتم قبول المعلومات التي أدخلتها إلا عند دفع رسوم التسجيل.';
+  String get registrationFeeWarning =>
+      'لن يتم قبول المعلومات التي أدخلتها إلا عند دفع رسوم التسجيل.';
 
   @override
   String get ok => 'حسناً';
@@ -481,7 +488,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get forgotPasswordTitle => 'نسيت كلمة المرور';
 
   @override
-  String get forgotPasswordDesc => 'الرجاء إدخال البريد الإلكتروني أو رقم القيد الخاص بك للتحقق من هويتك.';
+  String get forgotPasswordDesc =>
+      'الرجاء إدخال البريد الإلكتروني أو رقم القيد الخاص بك للتحقق من هويتك.';
 
   @override
   String get emailOrIdLabel => 'البريد الإلكتروني / رقم القيد';
@@ -493,7 +501,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get identityVerifiedSuccess => 'تم التحقق من هويتك بنجاح!';
 
   @override
-  String get mandatoryPasswordNotice => 'ملاحظة: كلمة المرور الجديدة ستكون هى كلمة المرور الدائمة الخاصة بك والتي ستستخدمها لتسجيل الدخول في المرات القادمة. كلمة المرور التي استخدمتها حالياً هي كلمة مرور مؤقتة فقط.';
+  String get mandatoryPasswordNotice =>
+      'ملاحظة: كلمة المرور الجديدة ستكون هى كلمة المرور الدائمة الخاصة بك والتي ستستخدمها لتسجيل الدخول في المرات القادمة. كلمة المرور التي استخدمتها حالياً هي كلمة مرور مؤقتة فقط.';
 
   @override
   String get notificationsTitle => 'الإشعارات';
@@ -505,13 +514,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noNotificationsMsg => 'لا توجد إشعارات جديدة حالياً';
 
   @override
-  String get registrationSuccessDesc => 'تم استلام طلبك. يرجى حفظ الرقم المرجعي للاستفسارات المستقبلية.';
+  String get registrationSuccessDesc =>
+      'تم استلام طلبك. يرجى حفظ الرقم المرجعي للاستفسارات المستقبلية.';
 
   @override
   String get referenceNumberLabel => 'الرقم المرجعي';
 
   @override
-  String get supportMessage => 'نحن هنا لمساعدتك! يمكنك التواصل معنا عبر أي من القنوات التالية:';
+  String get supportMessage =>
+      'نحن هنا لمساعدتك! يمكنك التواصل معنا عبر أي من القنوات التالية:';
 
   @override
   String get phoneNumberLabel => 'رقم الهاتف';
@@ -532,11 +543,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dummyNotification2Title => 'تحديث النظام';
 
   @override
-  String get dummyNotification2Subtitle => 'تمت إضافة مميزات جديدة إلى عرض الجدول الدراسي.';
+  String get dummyNotification2Subtitle =>
+      'تمت إضافة مميزات جديدة إلى عرض الجدول الدراسي.';
 
   @override
   String get dummyNotification3Title => 'الموعد النهائي للتسجيل';
 
   @override
   String get dummyNotification3Subtitle => 'يرجى إكمال مستنداتك بحلول الغد.';
+
+  @override
+  String get contactUniversity => 'تواصل مع الجامعة';
 }

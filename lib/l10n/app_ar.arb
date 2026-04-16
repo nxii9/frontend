@@ -22,6 +22,7 @@
   "highSchoolGpa": "معدل الثانوية العامة (%)",
   "selectMajor": "اختر التخصص",
   "uploadDocuments": "إرفاق شهادة الثانوي",
+  "uploadReceipt": "رفع السند",
   "uploadPhotos": "إرفاق الصور",
   "submitRegistration": "إرسال التسجيل",
   "registrationSuccessful": "!تم التسجيل بنجاح",
@@ -175,5 +176,6 @@
   "dummyNotification2Title": "تحديث النظام",
   "dummyNotification2Subtitle": "تمت إضافة مميزات جديدة إلى عرض الجدول الدراسي.",
   "dummyNotification3Title": "الموعد النهائي للتسجيل",
-  "dummyNotification3Subtitle": "يرجى إكمال مستنداتك بحلول الغد."
+  "dummyNotification3Subtitle": "يرجى إكمال مستنداتك بحلول الغد.",
+  "contactUniversity": "تواصل مع الجامعة"
 }

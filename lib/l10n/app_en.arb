@@ -22,6 +22,7 @@
   "highSchoolGpa": "High School GPA (%)",
   "selectMajor": "Select Major",
   "uploadDocuments": "Attach High School Certificate",
+  "uploadReceipt": "Upload Receipt",
   "uploadPhotos": "Attach Photos",
   "submitRegistration": "Submit Registration",
   "registrationSuccessful": "Registration Successful!",
@@ -175,5 +176,6 @@
   "dummyNotification2Title": "System Update",
   "dummyNotification2Subtitle": "New features added to schedule view.",
   "dummyNotification3Title": "Registration Deadline",
-  "dummyNotification3Subtitle": "Please complete your documents by tomorrow."
+  "dummyNotification3Subtitle": "Please complete your documents by tomorrow.",
+  "contactUniversity": "Contact University"
 }
