@@ -18,7 +18,7 @@ class ModernDropdownField<T> extends StatelessWidget {
     this.validator,
   });
 
-  void _showOptions(BuildContext context) {
+  void _showOptions(BuildContext context, FormFieldState<T> state) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
@@ -95,6 +95,7 @@ class ModernDropdownField<T> extends StatelessWidget {
                         child: InkWell(
                           borderRadius: BorderRadius.circular(16),
                           onTap: () {
+                            state.didChange(item.value);
                             if (onChanged != null) {
                               onChanged!(item.value);
                             }
@@ -184,7 +185,7 @@ class ModernDropdownField<T> extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                _showOptions(context);
+                _showOptions(context, state);
               },
               borderRadius: BorderRadius.circular(16),
               child: InputDecorator(
