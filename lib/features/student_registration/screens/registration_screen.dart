@@ -372,30 +372,32 @@ class _RegistrationViewState extends State<RegistrationView> {
         children: [
           Expanded(
             child: ElevatedButton(
-              onPressed: () {
-                // TODO: Re-enable validation after development
-                // bool isValid = true;
-                // if (state.currentStep < 6) {
-                //   isValid = _formKeys[state.currentStep].currentState?.validate() ?? true;
-                // } else {
-                //   if (!state.data.declarationChecked) {
-                //     isValid = false;
-                //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.declarationText)));
-                //   } else if (state.data.signaturePath == null) {
-                //     isValid = false;
-                //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.signature)));
-                //   }
-                // }
-                bool isValid = true; // Temporary bypass
+              onPressed: (state.currentStep == 6 && !state.data.declarationChecked)
+                  ? null
+                  : () {
+                      // TODO: Re-enable validation after development
+                      // bool isValid = true;
+                      // if (state.currentStep < 6) {
+                      //   isValid = _formKeys[state.currentStep].currentState?.validate() ?? true;
+                      // } else {
+                      //   if (!state.data.declarationChecked) {
+                      //     isValid = false;
+                      //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.declarationText)));
+                      //   } else if (state.data.signaturePath == null) {
+                      //     isValid = false;
+                      //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.signature)));
+                      //   }
+                      // }
+                      bool isValid = true; // Temporary bypass
 
-                if (isValid) {
-                  if (state.currentStep == 6) {
-                    context.read<RegistrationCubit>().submitRegistration();
-                  } else {
-                    context.read<RegistrationCubit>().nextStep();
-                  }
-                }
-              },
+                      if (isValid) {
+                        if (state.currentStep == 6) {
+                          context.read<RegistrationCubit>().submitRegistration();
+                        } else {
+                          context.read<RegistrationCubit>().nextStep();
+                        }
+                      }
+                    },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
