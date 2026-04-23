@@ -114,7 +114,7 @@ class _ContactStepState extends State<ContactStep> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) return l10n.requiredField;
-                    if (!RegExp(r'^[0-9]{10}$').hasMatch(value)) return 'يجب أن يتكون من 10 أرقام';
+                    if (value.length < 5) return 'يجب ألا يقل عن 5 خانات';
                     return null;
                   },
                 ),
@@ -168,7 +168,7 @@ class _ContactStepState extends State<ContactStep> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) return l10n.requiredField;
-                    if (!RegExp(r'^(05|5)[0-9]{8}$').hasMatch(value)) return 'صيغة الجوال غير صحيحة (10 أرقام وتبدأ بـ 05)';
+                    if (!RegExp(r'^\+?[0-9]{8,15}$').hasMatch(value)) return 'رقم الجوال غير صحيح (8 إلى 15 رقماً)';
                     return null;
                   },
                 ),
