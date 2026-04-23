@@ -128,7 +128,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(gender: value)),
                   validator: (value) {
-                    if (value == null) return 'Required';
+                    if (value == null) return 'مطلوب';
                     return null;
                   },
                 ),
@@ -145,7 +145,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(bloodType: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) return 'Required';
+                    if (value == null || value.isEmpty) return 'مطلوب';
                     return null;
                   },
                 ),
@@ -157,7 +157,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(nationality: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) return 'Required';
+                    if (value == null || value.isEmpty) return 'مطلوب';
                     return null;
                   },
                 ),
@@ -187,7 +187,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                     state.data.copyWith(maritalStatus: value),
                   ),
                   validator: (value) {
-                    if (value == null || value.isEmpty) return 'Required';
+                    if (value == null || value.isEmpty) return 'مطلوب';
                     return null;
                   },
                 ),
@@ -200,7 +200,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                       prefixIcon: Icons.calendar_month_rounded,
                       controller: _dobController,
                       validator: (value) {
-                        if (value == null || value.isEmpty) return 'Required';
+                        if (value == null || value.isEmpty) return 'مطلوب';
                         return null;
                       },
                     ),
@@ -214,7 +214,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(governorate: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) return 'Required';
+                    if (value == null || value.isEmpty) return 'مطلوب';
                     return null;
                   },
                 ),
@@ -226,7 +226,7 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(district: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) return 'Required';
+                    if (value == null || value.isEmpty) return 'مطلوب';
                     return null;
                   },
                 ),
