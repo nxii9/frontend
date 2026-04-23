@@ -7,12 +7,27 @@ import '../../../../core/widgets/modern_text_field.dart';
 import '../../../../core/widgets/animated_success_dialog.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class ChangePasswordScreen extends StatelessWidget {
+class ChangePasswordScreen extends StatefulWidget {
   final bool isMandatory;
   const ChangePasswordScreen({super.key, this.isMandatory = false});
 
   @override
+  State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();
+}
+
+class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _passController = TextEditingController();
+
+  @override
+  void dispose() {
+    _passController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isMandatory = widget.isMandatory;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
@@ -30,11 +45,13 @@ class ChangePasswordScreen extends StatelessWidget {
       body: GradientBackground(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children:
-                [
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children:
+                  [
                       Text(
                         AppLocalizations.of(context)!.changePasswordDescription,
                         style: TextStyle(
@@ -47,16 +64,29 @@ class ChangePasswordScreen extends StatelessWidget {
                         label: AppLocalizations.of(context)!.newPassword,
                         prefixIcon: Icons.lock_outline,
                         isPassword: true,
+                        controller: _passController,
+                        validator: (val) {
+                          if (val == null || val.isEmpty) return 'مطلوب';
+                          if (val.length < 8) return 'يجب ألا تقل عن 8 رموز';
+                          if (!RegExp(r'\d').hasMatch(val)) return 'يجب أن تحتوي على أرقام';
+                          return null;
+                        },
                       ),
                       const SizedBox(height: 16),
                       ModernTextField(
                         label: AppLocalizations.of(context)!.confirmPassword,
                         prefixIcon: Icons.lock_reset,
                         isPassword: true,
+                        validator: (val) {
+                          if (val == null || val.isEmpty) return 'مطلوب';
+                          if (val != _passController.text) return 'كلمات المرور غير متطابقة';
+                          return null;
+                        },
                       ),
                       const SizedBox(height: 32),
                       ElevatedButton(
                         onPressed: () {
+                          if (!(_formKey.currentState?.validate() ?? false)) return;
                           showGeneralDialog(
                             context: context,
                             barrierDismissible: false,
@@ -155,6 +185,7 @@ class ChangePasswordScreen extends StatelessWidget {
                     .animate(interval: 80.ms)
                     .fadeIn(duration: 350.ms)
                     .slideY(begin: 0.2, end: 0),
+            ),
           ),
         ),
       ),

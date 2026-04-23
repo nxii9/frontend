@@ -104,9 +104,11 @@ class _GuardianInfoStepState extends State<GuardianInfoStep> {
                   onChanged: (value) => cubit.updateData(
                     state.data.copyWith(guardianMobile: value),
                   ),
-                  validator: (value) => (value == null || value.isEmpty)
-                      ? l10n.requiredField
-                      : null,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) return l10n.requiredField;
+                    if (!RegExp(r'^(05|5)[0-9]{8}$').hasMatch(value)) return 'صيغة الجوال غير صحيحة (10 أرقام وتبدأ بـ 05)';
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 16),
                 ModernTextField(

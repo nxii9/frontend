@@ -92,9 +92,8 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(fullNameAr: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Required'; // Simple validation, ideally localized
-                    }
+                    if (value == null || value.trim().isEmpty) return 'مطلوب';
+                    if (!RegExp(r'^[\u0600-\u06FF\s]+$').hasMatch(value)) return 'يجب أن يحتوي على أحرف عربية فقط';
                     return null;
                   },
                 ),
@@ -106,9 +105,8 @@ class _PersonalInfoStepState extends State<PersonalInfoStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(fullNameEn: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Required';
-                    }
+                    if (value == null || value.trim().isEmpty) return 'مطلوب';
+                    if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) return 'يجب أن يحتوي على أحرف إنجليزية فقط';
                     return null;
                   },
                 ),

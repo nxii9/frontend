@@ -112,9 +112,11 @@ class _ContactStepState extends State<ContactStep> {
                   onChanged: (value) => cubit.updateData(
                     state.data.copyWith(identityNumber: value),
                   ),
-                  validator: (value) => (value == null || value.isEmpty)
-                      ? l10n.requiredField
-                      : null,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) return l10n.requiredField;
+                    if (!RegExp(r'^[0-9]{10}$').hasMatch(value)) return 'يجب أن يتكون من 10 أرقام';
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 16),
                 ModernTextField(
@@ -164,9 +166,11 @@ class _ContactStepState extends State<ContactStep> {
                   onChanged: (value) => cubit.updateData(
                     state.data.copyWith(mobileNumber: value),
                   ),
-                  validator: (value) => (value == null || value.isEmpty)
-                      ? l10n.requiredField
-                      : null,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) return l10n.requiredField;
+                    if (!RegExp(r'^(05|5)[0-9]{8}$').hasMatch(value)) return 'صيغة الجوال غير صحيحة (10 أرقام وتبدأ بـ 05)';
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 16),
                 ModernTextField(
@@ -187,13 +191,8 @@ class _ContactStepState extends State<ContactStep> {
                   onChanged: (value) =>
                       cubit.updateData(state.data.copyWith(email: value)),
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return l10n.requiredField;
-                    }
-                    if (!value.contains('@@')) {
-                      // Fixed escaping
-                      return l10n.invalidEmail;
-                    }
+                    if (value == null || value.isEmpty) return l10n.requiredField;
+                    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) return l10n.invalidEmail;
                     return null;
                   },
                 ),

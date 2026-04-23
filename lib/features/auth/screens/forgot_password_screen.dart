@@ -101,6 +101,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     if (value == null || value.trim().isEmpty) {
                       return l10n.requiredField;
                     }
+                    final val = value.trim();
+                    // If it is entirely numbers, it must be an ID of 10 digits
+                    if (RegExp(r'^[0-9]+$').hasMatch(val)) {
+                      if (val.length != 10) return 'رقم الهوية يجب أن يتكون من 10 أرقام';
+                    } else {
+                      // Otherwise it must be a valid email
+                      if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(val)) {
+                        return 'البريد الإلكتروني غير صحيح';
+                      }
+                    }
                     return null;
                   },
                 ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0),

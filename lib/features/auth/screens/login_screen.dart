@@ -19,6 +19,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   Key _columnKey = UniqueKey();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +45,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   constraints: BoxConstraints(
                     minHeight: constraints.maxHeight - 48,
                   ),
-                  child: Column(
-                    key: _columnKey,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children:
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      key: _columnKey,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children:
                         [
                               // Logo or Title
                               Padding(
@@ -67,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ModernTextField(
                                 label: AppLocalizations.of(context)!.username,
                                 prefixIcon: Icons.person,
+                                validator: (val) => (val == null || val.trim().isEmpty) ? 'مطلوب' : null,
                               ),
                               const SizedBox(height: 16),
 
@@ -75,6 +79,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 label: AppLocalizations.of(context)!.password,
                                 prefixIcon: Icons.lock,
                                 isPassword: true,
+                                validator: (val) {
+                                  if (val == null || val.isEmpty) return 'مطلوب';
+                                  if (val.length < 6) return 'يجب ألا تقل عن 6 رموز';
+                                  return null;
+                                },
                               ),
                               const SizedBox(height: 12),
 
@@ -103,16 +112,18 @@ class _LoginScreenState extends State<LoginScreen> {
                               // Login Button
                               ElevatedButton(
                                 onPressed: () {
-                                  // Navigate to Home
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) =>
-                                          const ChangePasswordScreen(
-                                            isMandatory: true,
-                                          ),
-                                    ),
-                                  );
+                                  if (_formKey.currentState?.validate() ?? false) {
+                                    // Navigate to Home
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) =>
+                                            const ChangePasswordScreen(
+                                              isMandatory: true,
+                                            ),
+                                      ),
+                                    );
+                                  }
                                 },
                                 style: ElevatedButton.styleFrom(
                                   elevation: 8,
@@ -279,8 +290,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             .animate(interval: 50.ms)
                             .fadeIn(duration: 350.ms, curve: Curves.easeOut)
                             .slideY(begin: 0.1, end: 0, duration: 350.ms),
+                      ),
+                    ),
                   ),
-                ),
               );
             },
           ),
