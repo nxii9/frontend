@@ -375,20 +375,18 @@ class _RegistrationViewState extends State<RegistrationView> {
               onPressed: (state.currentStep == 6 && !state.data.declarationChecked)
                   ? null
                   : () {
-                      // TODO: Re-enable validation after development
-                      // bool isValid = true;
-                      // if (state.currentStep < 6) {
-                      //   isValid = _formKeys[state.currentStep].currentState?.validate() ?? true;
-                      // } else {
-                      //   if (!state.data.declarationChecked) {
-                      //     isValid = false;
-                      //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.declarationText)));
-                      //   } else if (state.data.signaturePath == null) {
-                      //     isValid = false;
-                      //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.signature)));
-                      //   }
-                      // }
-                      bool isValid = true; // Temporary bypass
+                      bool isValid = true;
+                      if (state.currentStep < 6) {
+                        isValid = _formKeys[state.currentStep].currentState?.validate() ?? true;
+                      } else {
+                        if (!state.data.declarationChecked) {
+                          isValid = false;
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.declarationText)));
+                        } else if (state.data.signaturePath == null) {
+                          isValid = false;
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.signature)));
+                        }
+                      }
 
                       if (isValid) {
                         if (state.currentStep == 6) {
