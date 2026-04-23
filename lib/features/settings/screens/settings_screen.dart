@@ -488,6 +488,9 @@ class _AnimatedLogoutButton extends StatelessWidget {
   }
 }
 
+bool _globalIsLocked = false;
+int _globalDaysRemaining = 0;
+
 class _PasswordView extends StatefulWidget {
   const _PasswordView();
 
@@ -498,10 +501,6 @@ class _PasswordView extends StatefulWidget {
 class _PasswordViewState extends State<_PasswordView> {
   bool _isObscured = true;
   bool _isEditing = false;
-  // Simulate a time-lock (e.g., changed recently)
-  // Unlocked for user request to enable password change
-  bool _isLocked = false;
-  int _daysRemaining = 0;
 
   final _formKey = GlobalKey<FormState>();
   final _newPasswordController = TextEditingController();
@@ -539,8 +538,8 @@ class _PasswordViewState extends State<_PasswordView> {
 
       setState(() {
         _isEditing = false;
-        _isLocked = true;
-        _daysRemaining = 90;
+        _globalIsLocked = true;
+        _globalDaysRemaining = 90;
         _newPasswordController.clear();
         _confirmPasswordController.clear();
       });
@@ -593,7 +592,7 @@ class _PasswordViewState extends State<_PasswordView> {
                   });
                 },
               ),
-              if (!_isLocked && !_isEditing)
+              if (!_globalIsLocked && !_isEditing)
                 IconButton(
                   tooltip: null, // Removed per user request
                   icon: Icon(Icons.edit_rounded, color: iconColor),
@@ -626,7 +625,12 @@ class _PasswordViewState extends State<_PasswordView> {
                             isDense: true,
                           ),
                           validator: (value) {
-                            // Validation disabled for development
+                            if (value == null || value.isEmpty) {
+                              return 'مطلوب';
+                            }
+                            if (value.length < 8) {
+                              return 'يجب أن لا تقل كلمة المرور عن 8 خانات';
+                            }
                             return null;
                           },
                         ),
@@ -643,7 +647,12 @@ class _PasswordViewState extends State<_PasswordView> {
                             isDense: true,
                           ),
                           validator: (value) {
-                            // Validation disabled for development
+                            if (value == null || value.isEmpty) {
+                              return 'مطلوب';
+                            }
+                            if (value != _newPasswordController.text) {
+                              return 'كلمة المرور غير متطابقة';
+                            }
                             return null;
                           },
                         ),
@@ -673,7 +682,7 @@ class _PasswordViewState extends State<_PasswordView> {
                 )
               : const SizedBox.shrink(),
         ),
-        if (_isLocked) ...[
+        if (_globalIsLocked) ...[
           Container(
             margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
             padding: const EdgeInsets.all(12),
@@ -700,7 +709,7 @@ class _PasswordViewState extends State<_PasswordView> {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        l10n.daysRemaining(_daysRemaining),
+                        l10n.daysRemaining(_globalDaysRemaining),
                         style: TextStyle(
                           color: iconColor.withValues(alpha: 0.8),
                           fontSize: 11,
