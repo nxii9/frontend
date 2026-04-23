@@ -101,11 +101,14 @@ class _ModernTextFieldState extends State<ModernTextField> {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: Colors.redAccent, width: 1.5),
+          borderSide: BorderSide(color: theme.colorScheme.error, width: 1.5),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: theme.colorScheme.primary, width: 2),
+          borderSide: BorderSide(color: theme.colorScheme.error, width: 2),
+        ),
+        errorStyle: TextStyle(
+          color: theme.colorScheme.error,
         ),
       ),
     );

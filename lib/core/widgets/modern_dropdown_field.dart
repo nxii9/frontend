@@ -196,14 +196,14 @@ class ModernDropdownField<T> extends StatelessWidget {
                   ),
                   floatingLabelStyle: TextStyle(
                     color: hasError
-                        ? Colors.redAccent
+                        ? theme.colorScheme.error
                         : theme.colorScheme.primary,
                     fontWeight: FontWeight.bold,
                   ),
                   prefixIcon: Icon(
                     prefixIcon,
                     color: hasError
-                        ? Colors.redAccent
+                        ? theme.colorScheme.error
                         : theme.colorScheme.primary,
                   ),
                   filled: true,
@@ -231,15 +231,15 @@ class ModernDropdownField<T> extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     borderSide: BorderSide(
                       color: hasError
-                          ? Colors.redAccent
+                          ? theme.colorScheme.error
                           : theme.colorScheme.primary,
                       width: 2,
                     ),
                   ),
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(
-                      color: Colors.redAccent,
+                    borderSide: BorderSide(
+                      color: theme.colorScheme.error,
                       width: 1.5,
                     ),
                   ),
@@ -273,7 +273,7 @@ class ModernDropdownField<T> extends StatelessWidget {
                 child: Text(
                   state.errorText!,
                   style: TextStyle(
-                    color: Colors.redAccent.shade200,
+                    color: theme.colorScheme.error,
                     fontSize: 12,
                   ),
                 ),
